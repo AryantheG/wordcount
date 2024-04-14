@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #container {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+  }
+  #area {
+    width: 300px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  #countbutton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  #countbutton:hover {
+    background-color: #0056b3;
+  }
+  #wordcount {
+    font-size: 20px;
+    color: #007bff;
+    font-weight: bold;
+  }
+            </style>
+            </head>
+            <body>
+                <div id="container">
+                <textarea id="area"></textarea>
+                <button onclick="count()" id="countbutton">count words</button>
+                <p>word count:<span id="wordcount">0</span></p>
+                    </div>
+                <script>
+                    function count(){
+                    var textarea=document.getElementById("area");
+                    var wordcount=document.getElementById("wordcount");
+                    var text=textarea.value.trim();
+
+                    if(text===""){
+                      wordcount.textContent=0;
+                    return;
+
+            
+                    }
+                    var words=text.split(/\s+/);
+                    wordcount.textContent=words.length;
+                    }
+                    </script>
+                    </body>
+    </html>
